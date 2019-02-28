@@ -95,4 +95,16 @@ function listenToMouse(canvas) {
     canvas.onmouseup = function () {
         using = false
     }
+    canvas.ontouchstart = function(){
+         console.log('开始');
+    }
+    canvas.ontouchmove = function(){
+        console.log('边按变动');
+    }
+    canvas.ontouchend = function(){
+        console.log('弹起');
+    }
+    canvas.ontouchcancel = function(){
+        console.log('取消');
+    }
 }
