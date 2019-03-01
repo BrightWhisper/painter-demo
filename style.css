@@ -8,9 +8,9 @@ ol {
     padding: 0;
 }
 
-body {
+/* body {
     overflow: hidden;
-}
+} */
 
 .icon {
     width: 1em;
@@ -23,10 +23,10 @@ body {
 #xxx {
     background: white;
     display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
-
-
-
 
 .actions {
     position: fixed;
@@ -78,4 +78,26 @@ body {
 .colors>li.active {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
     transform: scale(1.2);
+}
+
+.sizes {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+
+.sizes>li {
+    margin: 20px 0;
+}
+
+.sizes>.thin {
+    height: 0;
+    width: 20px;
+    border-top: 3px solid black;
+}
+
+.sizes>.thick {
+    height: 0;
+    width: 20px;
+    border-top: 6px solid black;
 }
