@@ -8,6 +8,10 @@ ol {
     padding: 0;
 }
 
+body {
+    overflow: hidden;
+}
+
 .icon {
     width: 1em;
     height: 1em;
