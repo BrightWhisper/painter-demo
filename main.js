@@ -1,20 +1,41 @@
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
 
-autoSetCanvasSize(yyy); 
+autoSetCanvasSize(yyy);
 
 listenToUser(yyy);
 
-
 var eraserEnabled = false;
+
+pen.onclick = function () {
+    eraserEnabled = false;
+    pen.classList.add('active');
+    eraser.classList.remove('active')
+}
 eraser.onclick = function () {
     eraserEnabled = true;
-    actions.className = 'actions x';
+    eraser.classList.add('active');
+    pen.classList.remove('active');
+}
+red.onclick = function () {
+    context.strokeStyle = 'red';
+    red.classList.add('active');
+    green.classList.remove('active');
+    blue.classList.remove('active');
 
 }
-brush.onclick = function () {
-    eraserEnabled = false;
-    actions.className = 'actions';
+green.onclick = function () {
+    context.strokeStyle = 'green';
+    red.classList.remove('active');
+    green.classList.add('active'); 
+    blue.classList.remove('active');
+
+}
+blue.onclick = function () {
+    context.strokeStyle = 'blue';
+    red.classList.remove('active');
+    green.classList.remove('active');
+    blue.classList.add('active');
 }
 
 
@@ -45,10 +66,9 @@ function autoSetCanvasSize(canvas) {
 
 function drawLine(x1, y1, x2, y2) {
     context.beginPath();
-    context.strokeStyle = 'black';
     context.moveTo(x1, y1); // 起点
     context.lineWidth = 5;
-    context.lineTo(x2, y2);// 终点
+    context.lineTo(x2, y2); // 终点
     context.stroke();
     context.closePath();
 }
@@ -93,7 +113,7 @@ function listenToUser(canvas) {
                 lastPoint = newPoint;
             }
         }
-        canvas.ontouchend = function ( ) {
+        canvas.ontouchend = function () {
             using = false;
         }
     } else {
