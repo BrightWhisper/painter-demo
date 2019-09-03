@@ -75,6 +75,10 @@ ol {
     background-color: blue;
 }
 
+.colors>li.black {
+    background-color: black;
+}
+
 .colors>li.active {
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.95);
     transform: scale(1.2);
@@ -91,13 +95,20 @@ ol {
 }
 
 .sizes>.thin {
-    height: 0;
+    height: 2px;
     width: 20px;
-    border-top: 3px solid black;
+    border: 1px solid black;
+    
+}
+
+.sizes>li.active {
+    transform: scale(1.2);
+    transition: all 0.5s;
+    box-shadow: 0 0 3px rgba(129, 32, 148, 0.95);
 }
 
 .sizes>.thick {
-    height: 0;
+    height: 5px;
     width: 20px;
-    border-top: 6px solid black;
+    border: 1px solid black;
 }

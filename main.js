@@ -7,6 +7,8 @@ autoSetCanvasSize(yyy);
 listenToUser(yyy);
 
 var eraserEnabled = false;
+black.classList.add('active');
+thin.classList.add('active');
 
 pen.onclick = function () {
     eraserEnabled = false;
@@ -20,32 +22,49 @@ eraser.onclick = function () {
 }
 red.onclick = function () {
     context.strokeStyle = 'red';
-    red.classList.add('active');
     green.classList.remove('active');
     blue.classList.remove('active');
+    black.classList.remove('active');
+    red.classList.add('active');
 
 }
 green.onclick = function () {
     context.strokeStyle = 'green';
     red.classList.remove('active');
-    green.classList.add('active');
     blue.classList.remove('active');
+    black.classList.remove('active');
+    green.classList.add('active');
 
 }
 blue.onclick = function () {
     context.strokeStyle = 'blue';
     red.classList.remove('active');
     green.classList.remove('active');
+    black.classList.remove('active');
     blue.classList.add('active');
 }
+black.onclick = function(){
+    context.strokeStyle = 'black';
+    red.classList.remove('active');
+    green.classList.remove('active');
+    blue.classList.remove('active');
+    black.classList.add('active');
+}
+
 thin.onclick = function () {
     lineWidth = 5;
+    thick.classList.remove('active');
+    thin.classList.add('active');
+
 }
 thick.onclick = function () {
     lineWidth = 10;
+    thin.classList.remove('active');
+    thick.classList.add('active');
 }
 clear.onclick = function () {
     context.clearRect(0, 0, yyy.width, yyy.height);
+    clear.classList.add('ant-click-animating-node');
 }
 save.onclick = function () {
     var url = yyy.toDataURL("image/png");
