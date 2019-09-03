@@ -43,7 +43,7 @@ blue.onclick = function () {
     black.classList.remove('active');
     blue.classList.add('active');
 }
-black.onclick = function(){
+black.onclick = function () {
     context.strokeStyle = 'black';
     red.classList.remove('active');
     green.classList.remove('active');
@@ -62,11 +62,22 @@ thick.onclick = function () {
     thin.classList.remove('active');
     thick.classList.add('active');
 }
+
 clear.onclick = function () {
     context.clearRect(0, 0, yyy.width, yyy.height);
-    clear.classList.add('ant-click-animating-node');
+    clear.classList.add('ripple');
+    timer = setTimeout(() => {
+        clear.classList.remove('ripple');
+        clearTimeout(timer);
+    }, 500)
+
 }
 save.onclick = function () {
+    save.classList.add('ripple');
+    timer = setTimeout(() => {
+        save.classList.remove('ripple');
+        clearTimeout(timer);
+    }, 500)
     var url = yyy.toDataURL("image/png");
     var a = document.createElement('a');
     document.body.appendChild(a);
